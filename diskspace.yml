@@ -4,6 +4,8 @@
     ansible_ssh_host_key_checking: false
   tasks:
     - name: Get disk usage
+      debug:
+        msg: df -h
       command: df -h
       register: disk_usage
 
