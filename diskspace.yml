@@ -1,5 +1,4 @@
 - hosts: my_servers
-
   tasks:
     - name: Get disk usage
       command: df -h
