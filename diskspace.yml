@@ -7,16 +7,13 @@
     - name: Get disk usage
       command: df -h
       register: disk_usage
-    - name: Display Disk Free
-      debug:
-        var: disk_usage      
 
     - name: Check disk space available
       shell: df -h / | awk 'NR==2 {print $5}'
       register: disk_usage
     - name: Display Disk Free
       debug:
-        var: disk_usage      
+        var: disk_usage.stdout[:-1]|int
 
     # Send Discord message when disk space is over 80%
     - name: Send Discord message
