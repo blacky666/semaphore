@@ -12,7 +12,7 @@
         url: "{{ discord_webhook_url }}"
         method: POST
         body_format: json
-        body: '{"content": "Reboot required on {{ ansible_hostname }}, IP Address: {{ ansible_default_ipv4.address }}"}'
+        body: '{"content": "Reboot required on Hostname: {{ ansible_hostname }}, IP Address: {{ ansible_default_ipv4.address }}"}'
         headers:
           Content-Type: application/json
         status_code: 204
