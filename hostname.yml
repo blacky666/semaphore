@@ -10,6 +10,8 @@
 
     # Send Discord message when reboot is required
     - name: Send Discord message
+      community.general.discord:
+        username: "{{ notify_discord_username }}"
       uri:
         url: "{{ discord_webhook_url }}"
         method: POST
