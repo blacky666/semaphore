@@ -1,7 +1,5 @@
 - name: Get hostname and IP address of Alpine hosts
   hosts: my_servers
-  vars:
-    notify_discord_username: Semaphore
   gather_facts: yes
   tasks:
     - name: Display hostname and IP address
@@ -10,8 +8,6 @@
 
     # Send Discord message when reboot is required
     - name: Send Discord message
-      community.general.discord:
-        username: "{{ notify_discord_username }}"
       uri:
         url: "{{ discord_webhook_url }}"
         method: POST
