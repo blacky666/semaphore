@@ -1,5 +1,7 @@
 - name: Get hostname and IP address of Alpine hosts
   hosts: my_servers
+  vars:
+    notify_discord_username: Ansible
   gather_facts: yes
   tasks:
     - name: Display hostname and IP address
