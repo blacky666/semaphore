@@ -20,8 +20,8 @@
         url: "{{ discord_webhook_url }}"
         method: POST
         body_format: json
-        body: '{"content": "Disk space on {{ ansible_hostname }} is above 80%!"}'
+        body: '{"content": "Disk space on {{ ansible_hostname }} is above 85%!"}'
         headers:
           Content-Type: application/json
         status_code: 204
-      when: disk_usage.stdout[:-1]|int > 8
+      when: disk_usage.stdout[:-1]|int > 85
