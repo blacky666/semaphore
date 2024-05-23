@@ -4,4 +4,4 @@
   tasks:
     - name: Display hostname and IP address
       debug:
-        msg: "Hostname: {{ ansible_hostname }}, IP Address: {{ ansible_default_ipv4.address }}, TEST: {{var_enviroment}}"
+        msg: "Hostname: {{ ansible_hostname }}, IP Address: {{ ansible_default_ipv4.address }}, TEST1: {{var_enviroment}}, TEST2: {{var_enviroment_2}}"
