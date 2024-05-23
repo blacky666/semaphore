@@ -4,12 +4,12 @@
     ansible_host_key_checking: false
     ansible_ssh_host_key_checking: false
   tasks:
-    - name: Display Disk Free
-      debug:
-        var: ansible_facts
     - name: Get disk usage
       command: df -h
       register: disk_usage
+    - name: Display Disk Free
+      debug:
+        var: disk_usage      
 
     - name: Check disk space available
       shell: df -h / | awk 'NR==2 {print $5}'
