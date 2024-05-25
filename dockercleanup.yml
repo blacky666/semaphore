@@ -1,4 +1,7 @@
 - hosts: "my_docker"
+  vars:
+    ansible_host_key_checking: false
+    ansible_ssh_host_key_checking: false
   tasks:
     - name: Prune non-dangling, and dangling images
       community.docker.docker_prune:
