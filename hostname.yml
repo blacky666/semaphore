@@ -1,4 +1,7 @@
 - name: Get hostname and IP address of Alpine hosts
+  vars:
+    ansible_host_key_checking: false
+    ansible_ssh_host_key_checking: false
   hosts: my_servers
   gather_facts: yes
   tasks:
