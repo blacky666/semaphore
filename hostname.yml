@@ -4,7 +4,7 @@
     ansible_ssh_host_key_checking: false
   hosts: my_servers
   gather_facts: yes
-  serial: 1
+  serial: 4
   tasks:
     - name: Display hostname and IP address
       debug:
