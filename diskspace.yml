@@ -2,6 +2,7 @@
   vars:
     ansible_host_key_checking: false
     ansible_ssh_host_key_checking: false
+  serial: 4  
   tasks:
     - name: Get disk usage
       command: df -h
