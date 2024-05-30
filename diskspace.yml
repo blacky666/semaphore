@@ -14,7 +14,7 @@
       debug:
         var: disk_usage.stdout[:-1]|int
 
-    # Send Discord message when disk space is over 80%
+    # Send Discord message when disk space is over 85%
     - name: Send Discord message
       uri:
         url: "{{ discord_webhook_url }}"
