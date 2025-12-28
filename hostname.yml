@@ -23,4 +23,8 @@
         body: '{"content": "Reboot required on Hostname: {{ ansible_hostname }}, IP Address: {{ ansible_default_ipv4.address }}"}'
         headers:
           Content-Type: application/json
-        status_code: 204
+        status_code: [200, 204]
+        validate_certs: yes
+      delegate_to: localhost
+      become: no
+      when: reboot_required.stat.exists
