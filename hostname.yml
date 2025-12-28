@@ -14,17 +14,17 @@
       pause:
         seconds: 2        
 
-    # Send Discord message when reboot is required
+    # Send Discord message when disk space is over 85%
     - name: Send Discord message
       uri:
         url: "{{ discord_webhook_url }}"
         method: POST
         body_format: json
-        body: '{"content": "Reboot required on Hostname: {{ ansible_hostname }}, IP Address: {{ ansible_default_ipv4.address }}"}'
+        body: '{"content": "Disk space on {{ ansible_hostname }} is above 85%!"}'
         headers:
           Content-Type: application/json
         status_code: [200, 204]
         validate_certs: yes
       delegate_to: localhost
       become: no
-      when: reboot_required.stat.exists
+      when: disk_usage.stdout[:-1]|int > 85
