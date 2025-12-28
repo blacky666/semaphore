@@ -30,4 +30,5 @@
         status_code: [200, 204]
         validate_certs: yes
       delegate_to: localhost
+      become: no
       when: reboot_required.stat.exists
