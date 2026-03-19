@@ -5,10 +5,10 @@
   tasks:
     - name: Prune non-dangling, and dangling images
       community.docker.docker_prune:
-        containers: false
+        containers: true
         images: true
         images_filters:
           dangling: false
-        networks: false
+        networks: true
         volumes: false
-        builder_cache: false
+        builder_cache: true
